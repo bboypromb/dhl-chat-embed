@@ -5,7 +5,21 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; width: 100%; overflow: hidden; }
-    #n8n-chat { height: 100vh; width: 100vw; display: flex; flex-direction: column; }
+    #n8n-chat,
+    #n8n-chat > main,
+    #n8n-chat .chat-layout {
+      height: 100vh !important;
+      width: 100vw !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    #n8n-chat .chat-body {
+      flex: 1 !important;
+      overflow-y: auto !important;
+    }
+    #n8n-chat .chat-footer {
+      flex-shrink: 0 !important;
+    }
   </style>
   <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet"/>
 </head>
