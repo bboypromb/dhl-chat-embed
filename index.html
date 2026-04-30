@@ -3,28 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; overflow: hidden; }
-    
-    /* Force chat window to fill entire page */
-    .n8n-chat-window-wrapper {
-      width: 100vw !important;
-      height: 100vh !important;
-      max-width: 100% !important;
-      max-height: 100% !important;
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      border-radius: 0 !important;
-      box-shadow: none !important;
-    }
-
-    /* Hide the floating toggle button */
-    .n8n-chat-toggle {
-      display: none !important;
-    }
+    * { margin: 0; padding: 0; }
+    body { height: 100vh; overflow: hidden; }
   </style>
   <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet"/>
 </head>
@@ -33,9 +13,7 @@
     import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
     createChat({
       webhookUrl: 'https://nexgen-ai.app.n8n.cloud/webhook/5f3c279c-1cab-4ef3-b7d5-f2561c6a8a6c',
-      mode: 'window',
-      defaultOpen: true,
-      showWelcomeScreen: false,
+      mode: 'fullscreen',
       initialMessages: ['Hi! How can I help you today?'],
     });
   </script>
