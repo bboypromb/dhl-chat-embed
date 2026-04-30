@@ -4,33 +4,32 @@
   <meta charset="UTF-8"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; overflow: hidden; }
-    #n8n-chat,
-    #n8n-chat > main,
-    #n8n-chat .chat-layout {
-      height: 100vh !important;
+    html, body { height: 100%; width: 100%; }
+    /* Force the chat window to fill the whole page */
+    .n8n-chat-window {
       width: 100vw !important;
-      display: flex !important;
-      flex-direction: column !important;
+      height: 100vh !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      border-radius: 0 !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      right: 0 !important;
     }
-    #n8n-chat .chat-body {
-      flex: 1 !important;
-      overflow-y: auto !important;
-    }
-    #n8n-chat .chat-footer {
-      flex-shrink: 0 !important;
+    /* Hide the toggle button */
+    .n8n-chat-toggle {
+      display: none !important;
     }
   </style>
   <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet"/>
 </head>
 <body>
-  <div id="n8n-chat"></div>
   <script type="module">
     import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
     createChat({
       webhookUrl: 'https://nexgen-ai.app.n8n.cloud/webhook/5f3c279c-1cab-4ef3-b7d5-f2561c6a8a6c',
-      target: '#n8n-chat',
-      mode: 'fullscreen',
+      mode: 'window',
+      defaultOpen: true,
       showWelcomeScreen: false,
       initialMessages: ['Hi! How can I help you today?'],
     });
